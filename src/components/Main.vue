@@ -14,7 +14,8 @@ export default {
       return {
         store,
       }
-    }
+    },
+
   }
 </script>
 
@@ -22,18 +23,21 @@ export default {
 <template>
  
     <div class="container">
-      <h1>Progetti</h1>
-      <div class="row row-cols-4">
-        <ProjectCard v-for="project in store.projects" 
-                      :key="project.id"
-                      :title="project.title"
-                      :link="project.link"
-                      :image="project.image"
-                      :description="project.description"
-                      :type="project.type"
-                      :technologies="project.technologies"
-                      />
-      </div>
+        <h1>Progetti</h1>
+        <div class="row row-cols-4">
+          <ProjectCard v-for="project in store.projects" 
+                        :key="project.id"
+                        :title="project.title"
+                        :link="project.link"
+                        :image="project.image"
+                        :description="project.description"
+                        :type="project.type"
+                        :technologies="project.technologies"
+                        />
+        </div>
+
+
+
     </div>
 
     
