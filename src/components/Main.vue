@@ -22,7 +22,7 @@ export default {
 
 <template>
  
-    <div class="container">
+    <!-- <div class="container"> -->
 
 
           <router-view></router-view>
@@ -31,7 +31,7 @@ export default {
 
 
 
-    </div>
+    <!-- </div> -->
 
     
 

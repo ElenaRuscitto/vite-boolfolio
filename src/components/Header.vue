@@ -52,4 +52,13 @@
 @use '../assets/scss/partials/general' as *;
 @use '../assets/scss/partials/variables' as *;
 
+a{
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: rgb(107, 105, 105);
+    text-decoration: underline;
+  }
+}
+
 </style>

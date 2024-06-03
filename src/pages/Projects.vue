@@ -45,7 +45,7 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
 
 
 <template>
-  <div>
+  <div class="container">
     <h1 class="text-center my-5">I miei Progetti</h1>
     <div class="row row-cols-4">
       <ProjectCard v-for="project in store.projects" 

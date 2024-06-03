@@ -44,13 +44,14 @@ export default {
 
 
 <template>
+  
   <Header />
 
 
-    <Main />
+  <Main />
 
 
-  <Footer />
+  <Footer />  
 
 </template>
 
