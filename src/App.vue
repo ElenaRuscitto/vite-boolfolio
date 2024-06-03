@@ -19,23 +19,23 @@ export default {
       }
     },
 
-    methods: {
-      getApi(){
-        axios.get(store.apiUrl)
-        .then(result=> {
-          store.projects = result.data.data
-          console.log(store.projects);
-        })
-        .catch(error => {
-          console.log(error);
-          console.log(error.message);
-        })
-      }
-    },
+    // methods: {
+    //   getApi(){
+    //     axios.get(store.apiUrl)
+    //     .then(result=> {
+    //       store.projects = result.data.data
+    //       console.log(store.projects);
+    //     })
+    //     .catch(error => {
+    //       console.log(error);
+    //       console.log(error.message);
+    //     })
+    //   }
+    // },
 
-    mounted(){
-      this.getApi()
-    }
+    // mounted(){
+    //   this.getApi()
+    // }
   }
 
 </script>
@@ -45,7 +45,11 @@ export default {
 
 <template>
   <Header />
-  <Main />
+
+
+    <Main />
+
+
   <Footer />
 
 </template>

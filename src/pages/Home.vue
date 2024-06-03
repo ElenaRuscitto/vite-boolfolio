@@ -8,7 +8,8 @@
 
 <template>
   <div>
-    <h1>Home</h1>
+    <h1 class="text-center my-5">Home</h1>
+    <img src="" alt="">
   </div>
 </template>
 

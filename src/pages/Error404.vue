@@ -8,7 +8,7 @@
 
 <template>
   <div>
-    <h1>Error 404</h1>
+    <h1 class="text-center my-5">Error 404</h1>
   </div>
 </template>
 

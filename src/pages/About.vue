@@ -8,7 +8,7 @@
 
 <template>
   <div>
-    <h1>Chi sono</h1>
+    <h1 class="text-center my-5">Chi sono</h1>
   </div>
 </template>
 
