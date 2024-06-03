@@ -66,12 +66,12 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
     <h1 class="text-center my-5">I miei Progetti</h1>
     <div class="row row-cols-2">
       <!-- col 1 -->
-      <div class="col">
+      <div class="col ">
 
         <div class="box">
           <h3>Tipi:</h3>
             <div>
-              <span v-for="item in store.types" :key="`c-${item.id}`" class="badge text-bg-primary m-1"> {{item.name}} </span>
+              <span v-for="item in store.types" :key="`c-${item.id}`" class="badge text-bg-dark m-1"> {{item.name}} </span>
             </div>
         </div>
 
@@ -107,10 +107,12 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
 
 <style lang="scss" scoped>
 
-// .box {
-//   border: 1px solid black;
-//   border-radius: 10px;
-//   padding: 10px;
-// }
+.box {
+  // border: 1px solid black;
+  // border-radius: 10px;
+  // padding: 10px;
+  margin-left: 200px;
+  // margin: 0 auto;
+}
 
 </style>
