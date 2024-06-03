@@ -9,7 +9,7 @@
 <template>
   <div class="image">
     <!-- <h1 class="text-center py-5 text-white">Home</h1> -->
-    <!-- <img src="../../public/img/developer.jpg" alt=""> -->
+
   </div>
 </template>
 

@@ -21,8 +21,5 @@
 @use '../assets/scss/partials/general' as *;
 @use '../assets/scss/partials/variables' as *;
 
-footer{
-  padding-bottom: 20px;
-  
-}
+
 </style>
