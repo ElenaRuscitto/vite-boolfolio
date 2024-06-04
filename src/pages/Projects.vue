@@ -89,13 +89,7 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
     <div class="row row-cols-4">
       <ProjectCard v-for="project in store.projects" 
                         :key="project.id"
-                        :id="project.id"
-                        :title="project.title"
-                        :link="project.link"
-                        :image="project.image"
-                        :description="project.description"
-                        :type="project.type"
-                        :technologies="project.technologies"
+                        :project = "project"
                         />
     </div>
 
@@ -112,7 +106,6 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
   // border-radius: 10px;
   // padding: 10px;
   margin-left: 200px;
-  // margin: 0 auto;
 }
 
 </style>

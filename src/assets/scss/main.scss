@@ -14,3 +14,11 @@ body{
   background-color: rgb(209, 231, 221);
 }
 
+a{
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: rgb(107, 105, 105);
+    text-decoration: underline;
+  }
+}
