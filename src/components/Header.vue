@@ -52,6 +52,10 @@
 @use '../assets/scss/partials/general' as *;
 @use '../assets/scss/partials/variables' as *;
 
+header{
+  height: 80px;
+}
+
 // a{
 //   text-decoration: none;
 //   color: black;

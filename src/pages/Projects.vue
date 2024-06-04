@@ -55,6 +55,7 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
       this.getApi('projects')
       this.getApi('types')
       this.getApi('technologies')
+     
     }
     
   }
@@ -71,7 +72,12 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
         <div class="box">
           <h3>Tipi:</h3>
             <div>
-              <span v-for="item in store.types" :key="`c-${item.id}`" class="badge text-bg-dark m-1"> {{item.name}} </span>
+              <router-link 
+                v-for="item in store.types" 
+                :key="`c-${item.id}`" 
+                class="badge text-bg-dark m-1" 
+                :to="{name:'typeProjects', params: {slug: item.slug}}"> 
+              {{item.name}} </router-link>
             </div>
         </div>
 
@@ -81,7 +87,12 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
         <div class="box">
           <h3>Tecnologie:</h3>
             <div>
-              <span v-for="item in store.technologies" :key="`c-${item.id}`" class="badge text-bg-success m-1"> {{item.name}} </span>
+              <router-link 
+              v-for="item in store.technologies" 
+              :key="`c-${item.id}`" 
+              class="badge text-bg-success m-1"
+              :to="{name:'technologyProjects', params: {slug: item.slug}}"> 
+              {{item.name}} </router-link>
             </div>
         </div>
       </div>
