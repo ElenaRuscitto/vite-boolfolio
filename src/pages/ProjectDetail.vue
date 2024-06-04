@@ -30,13 +30,20 @@ import {store} from '../data/store';
         } 
         return 'Type: ' + this.project.name;
       },
-      // technologies(){
-      //   if(!this.project.technologies) {
-      //     return 'nessuna Tecnologia'
-      //   } 
-      //   return 'Technology: ' + this.project.name;
-      // }   
-      },
+      // projectUpdated(){
+      //   // creo una nuova data in base al dato che arriva dall' Api 
+      //   const d = new Date (this.project.updated_at) ;
+      //   // opzioni di visualizzazione della data 
+      //   let options = {
+      //     weekday: 'long' , 
+      //     year: 'numeric',
+      //     month: 'long',
+      //     day: 'numeric'
+      //   }
+      //   // navigator.language restituisce la lingua del browser 
+      //   return new Intl.DateTimeFormat(navigator.language, options).format(d);
+      // } 
+    },
     
     mounted(){
       this.getApi();
@@ -46,13 +53,15 @@ import {store} from '../data/store';
 
 
 <template>
-  <div>
-    <div class="project text-center my-5">
-      <h1>{{project.id}} - {{ project.title }}</h1>
-      <!-- <h6 class="card-subtitle mb-2 text-body-secondary">{{ project.type.name}}</h6> -->
+  <div class="container">
+    <h1 class="text-center mt-5">Dettaglio</h1>
+    <div class="mb-5">
+      <h2 class=" text-capitalize"> {{project.id}} - {{ project.title }}</h2>
+      <!-- <p><strong>Data:</strong>{{ projectUpdated }}</p> -->
+      <h6 class="card-subtitle mb-2 text-body-secondary"><strong>Tipo: </strong>{{project.type?.name}}</h6>
 
-      <h6 class="mb-2">Tecnologie:
-        <span class="badge text-bg-success m-1" v-for="(technology, index) in project.technologies" :key="index" >{{technology.name}}</span>
+      <h6 class="mb-2"><strong>Tecnologie:</strong>
+        <span class="badge text-bg-success m-1" v-for="(technology, index) in project?.technologies" :key="index" >{{technology.name}}</span>
       </h6>
       <img :src="`http://127.0.0.1:8000${project.image}`" alt="project.title"><br>
       <small class="caption">{{ project.original_image }}</small>
