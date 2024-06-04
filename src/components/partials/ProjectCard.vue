@@ -22,7 +22,7 @@ import { store } from '../../data/store'
         <h6 class="card-subtitle mb-2 text-body-secondary">{{ project.type.name }}</h6>
 
         <h6 class="mb-2">Tecnologie:
-          <span class="badge text-bg-success m-1" v-for="(technology, index) in technologies" :key="index" >{{project.technology.name}}</span>
+          <span class="badge text-bg-success m-1" v-for="(technology, index) in project.technologies" :key="index" >{{technology.name}}</span>
         </h6>
         <p class="card-text">{{ project.description }}</p>
         <a href="#" class="card-link">{{ project.link }}</a>

@@ -23,6 +23,21 @@ import {store} from '../data/store';
         })
       }
     },
+    computed: {
+      type(){
+        if(!this.project.type) {
+          return 'nessun Tipo'
+        } 
+        return 'Type: ' + this.project.name;
+      },
+      // technologies(){
+      //   if(!this.project.technologies) {
+      //     return 'nessuna Tecnologia'
+      //   } 
+      //   return 'Technology: ' + this.project.name;
+      // }   
+      },
+    
     mounted(){
       this.getApi();
     }
@@ -34,13 +49,13 @@ import {store} from '../data/store';
   <div>
     <div class="project text-center my-5">
       <h1>{{project.id}} - {{ project.title }}</h1>
-      <h6 class="card-subtitle mb-2 text-body-secondary">{{ project.type.name}}</h6>
+      <!-- <h6 class="card-subtitle mb-2 text-body-secondary">{{ project.type.name}}</h6> -->
 
       <h6 class="mb-2">Tecnologie:
         <span class="badge text-bg-success m-1" v-for="(technology, index) in project.technologies" :key="index" >{{technology.name}}</span>
       </h6>
-      <img :src="project.image" alt="project.title">
-      <p class="caption">{{ project.original_image }}</p>
+      <img :src="`http://127.0.0.1:8000${project.image}`" alt="project.title"><br>
+      <small class="caption">{{ project.original_image }}</small>
       <p class="card-text"><strong>Descrizione:</strong> {{ project.description }}</p>
       <a href="#" class="card-link"><strong>Link:</strong> {{ project.link }}</a>
     </div>
