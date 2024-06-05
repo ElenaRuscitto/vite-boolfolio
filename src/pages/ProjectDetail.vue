@@ -2,6 +2,7 @@
 import axios from 'axios';
 import {store} from '../data/store';
 
+
   export default {
     name: 'ProjectDetail',
     

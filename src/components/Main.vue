@@ -46,7 +46,7 @@ export default {
 @use '../assets/scss/partials/variables' as *;
 
 main{
- min-height: calc(100vh - 200px);
+ min-height: calc(100vh - 1200px);
 }
 
 </style>
