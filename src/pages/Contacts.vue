@@ -81,21 +81,21 @@ import Loader from '../components/partials/Loader.vue';
 
           <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
-            <input name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
+            <input v-model="name" name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
             <p class="error">{{ errors.name?.toString() }}</p>
             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
           </div>
 
           <div class="mb-3">
             <label for="email" class="form-label">Email </label>
-            <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" >
+            <input v-model="email"  name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" >
             <p class="error">{{ errors.email?.toString() }}</p>
             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
           </div>
 
           <div class="mb-3">
             <label for="message" class="form-label">Messaggio</label>
-            <textarea name="message" type="text" class="form-control" rows="3" id="message"></textarea>
+            <textarea v-model="message"  name="message" type="text" class="form-control" rows="3" id="message"></textarea>
             <p class="error">{{ errors.message?.toString() }}</p>
           </div>
 
