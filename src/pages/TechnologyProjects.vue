@@ -35,7 +35,7 @@ import {store} from '../data/store';
 
 <template>
   <div class="container">
-    <h1>Elenco dei Progetti per il Tecnologia: {{ technologyName }}</h1>
+    <h1 class="mt-4">Elenco dei Progetti per il Tecnologia: {{ technologyName }}</h1>
 
     <ul>
       <li 

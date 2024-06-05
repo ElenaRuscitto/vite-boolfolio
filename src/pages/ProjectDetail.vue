@@ -37,7 +37,7 @@ import {store} from '../data/store';
       formatDate(){
         // const d = this.flag ? new Date (store.project.created_at) : new Date (store.project.updated_at);
         let d;
-        let dateValue = this.flag? this.project.created_at : this.project.updated_at;
+        let dateValue = this.project.updated_at;
         if (dateValue) {
           d = new Date(dateValue);
 

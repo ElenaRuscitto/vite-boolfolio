@@ -74,7 +74,7 @@ import Loader from '../components/partials/Loader.vue';
 
 
 <template>
-  <div class="container ">
+  <div class="container">
     <h1 class="text-center my-5">Contatti</h1>
       <div v-if="!loader">
         <form @submit.prevent="sendEmail" class="box my-5">
@@ -118,4 +118,6 @@ import Loader from '../components/partials/Loader.vue';
 .error {
   color: red;
 }
+
+
 </style>

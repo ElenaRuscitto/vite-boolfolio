@@ -2,6 +2,10 @@
 import axios from 'axios';
 import {store} from '../data/store';
 import ProjectCard from '../components/partials/ProjectCard.vue';
+import Loader from '../components/partials/Loader.vue';
+import Paginator from '../components/partials/Paginator.vue';
+
+
 
 
   export default {
@@ -9,6 +13,8 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
  
     components: {
     ProjectCard,
+    Loader,
+    Paginator
     
     },
   
@@ -17,6 +23,7 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
       return {
         store,
         axios,
+        loader: true,
         // projects: [],
         // types: [],
         // technologies: []
@@ -25,21 +32,30 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
 
     methods: {
       getApi(type = ''){
+        this.loader = true;
         axios.get(store.apiUrl + type)
         .then(result=> {
-
+          this.loader = false;
           // switch
           switch (type) {
             case 'types':
               store.types = result.data
+              
               break;
 
             case 'technologies':
               store.technologies = result.data
+       
               break;
 
             default:
               store.projects = result.data.data
+
+
+              // paginator
+              store.paginator.current_page = result.data.current_page;
+                  store.paginator.links = result.data.links
+                  store.paginator.total = result.data.total
               break;
           }
 
@@ -47,6 +63,7 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
         .catch(error => {
           console.log(error);
           console.log(error.message);
+          this.loader = false;
         })
       }
     },
@@ -63,7 +80,7 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
 
 
 <template>
-  <div class="container">
+  <div class="container " v-if="!loader">
     <h1 class="text-center my-5">I miei Progetti</h1>
     <div class="row row-cols-2">
       <!-- col 1 -->
@@ -79,8 +96,9 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
                 :to="{name:'typeProjects', params: {slug: item.slug}}"> 
               {{item.name}} </router-link>
             </div>
+            
         </div>
-
+        
       </div>
       <!-- /col 1 -->
       <div class="col">
@@ -106,6 +124,11 @@ import ProjectCard from '../components/partials/ProjectCard.vue';
 
     
   </div>
+  <Loader v-else />
+  <div class="text-black">
+    <Paginator :data="store.paginator" @changePage="getApi" />
+  </div>
+  
 </template>
 
 
